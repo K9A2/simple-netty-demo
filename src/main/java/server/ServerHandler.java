@@ -14,7 +14,7 @@ public class ServerHandler extends SimpleChannelInboundHandler<String> {
     private static final Logger logger = LogManager.getLogger();
 
     @Override
-    public void channelActive(ChannelHandlerContext context) throws Exception {
+    public void channelActive(ChannelHandlerContext context) {
         logger.info("client connected");
         context.write("Welcome connect to server. It is " + new Date() + " now\r\n");
         context.flush();
